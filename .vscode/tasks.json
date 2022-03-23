@@ -1,0 +1,57 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            // 编译godot
+            "label": "build godot engine debug",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/godot"
+            },
+            "command": "scons",
+            "args": [
+                "target=debug",
+                "platform=windows",
+                "bits=64",
+                "-j12"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile",
+        },
+        {
+            // 编译godot-cpp
+            "label": "build godot-cpp debug",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/godot-cpp"
+            },
+            "command": "scons",
+            "args": [
+                "target=debug",
+                "platform=windows",
+                "bits=64",
+                "-j12"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile",
+            "dependsOrder": "sequence",
+            "dependsOn": "build godot engine debug"
+        },
+        {
+            // 编译project
+            "label": "build godot editor debug",
+            "type": "shell",
+            "command": "scons",
+            "args": [
+                "target=debug",
+                "platform=windows",
+                "bits=64",
+                "-j12"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile",
+            "dependsOrder": "sequence",
+            "dependsOn": "build godot-cpp debug"
+        }
+    ]
+}
