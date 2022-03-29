@@ -9,12 +9,22 @@
                 "cwd": "${workspaceFolder}/godot"
             },
             "command": "scons",
-            "args": [
-                "target=debug",
-                "platform=windows",
-                "bits=64",
-                "-j12"
-            ],
+            "windows":{// windows
+                "args": [
+                    "target=debug",
+                    "platform=windows",
+                    "bits=64",
+                    "-j20"
+                ],
+            },
+            "linux":{// linux
+                "args": [
+                    "target=debug",
+                    "platform=x11",
+                    "bits=64",
+                    "-j20"
+                ]
+            },
             "group": "build",
             "problemMatcher": "$msCompile",
         },
@@ -26,12 +36,22 @@
                 "cwd": "${workspaceFolder}/godot-cpp"
             },
             "command": "scons",
-            "args": [
-                "target=debug",
-                "platform=windows",
-                "bits=64",
-                "-j12"
-            ],
+            "windows":{// windows
+                "args": [
+                    "target=debug",
+                    "platform=windows",
+                    "bits=64",
+                    "-j20"
+                ],
+            },
+            "linux":{// linux
+                "args": [
+                    "target=debug",
+                    "platform=linux",
+                    "bits=64",
+                    "-j20"
+                ]
+            },
             "group": "build",
             "problemMatcher": "$msCompile",
             "dependsOrder": "sequence",
@@ -42,12 +62,22 @@
             "label": "build godot editor debug",
             "type": "shell",
             "command": "scons",
-            "args": [
-                "target=debug",
-                "platform=windows",
-                "bits=64",
-                "-j12"
-            ],
+            "windows":{// windows
+                "args": [
+                    "target=debug",
+                    "platform=windows",
+                    "bits=64",
+                    "-j20"
+                ],
+            },
+            "linux":{// linux
+                "args": [
+                    "target=debug",
+                    "platform=linux",
+                    "bits=64",
+                    "-j20"
+                ]
+            },
             "group": "build",
             "problemMatcher": "$msCompile",
             "dependsOrder": "sequence",
