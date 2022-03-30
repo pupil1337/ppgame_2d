@@ -2,10 +2,24 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "editor debug",
+            "name": "editor debug[windows]",
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${workspaceFolder}/godot/bin/godot.windows.tools.64.exe",
+            "args": [
+                "-e"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/project",
+            "environment": [],
+            "console": "integratedTerminal",
+            "preLaunchTask": "build godot editor debug"
+        },
+        {
+            "name": "editor debug[linux]",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/godot/bin/godot.linuxbsd.tools.64",
             "args": [
                 "-e"
             ],
